@@ -1,0 +1,124 @@
+<!doctype html>
+<html>
+<head>
+	<script src="https://api.mapy.cz/loader.js"></script>
+	<script>Loader.load()</script>
+  
+  </head>
+
+<body>
+	<div id="mapa" style="width:600px; height:400px;"></div>
+	<script type="text/javascript">
+		var park = SMap.Coords.fromWGS84(16.61, 49.185);
+		var mapa = new SMap(JAK.gel("mapa"), park, 10);
+		mapa.addDefaultLayer(SMap.DEF_BASE).enable();
+		mapa.addDefaultControls();	
+
+		var card = new SMap.Card();
+		card.getHeader().innerHTML = "<h3>Spodní Brno Bohunice</h3>";
+		card.getBody().innerHTML = "Volných míst: 4<br>Celkem míst: 4";
+
+		var layer = new SMap.Layer.Marker();
+		mapa.addLayer(layer);
+		layer.enable();
+
+		var options = {
+			title: "Brno"
+		};
+		var marker = new SMap.Marker(park, "myMarker", options);
+		marker.decorate(SMap.Marker.Feature.Card, card);
+		layer.addMarker(marker);      
+	</script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myUL {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#myUL li a {
+  border: 1px solid #ddd;
+  margin-top: -1px; /* Prevent double borders */
+  background-color: #f6f6f6;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  color: black;
+  display: block
+}
+
+#myUL li a:hover:not(.header) {
+  background-color: #eee;
+}
+</style>
+</head>
+<body>
+
+<h2>List of cities</h2>
+
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search a city" title="Type in a name">
+
+<ul id="myUL">
+  <li><a href="#">Brno</a></li>
+  <li><a href="#">Praha</a></li>
+
+  <li><a href="#">Olomouc</a></li>
+  <li><a href="#">Ostrava</a></li>
+
+  <li><a href="#">Plzen</a></li>
+  <li><a href="#">Jihlava</a></li>
+  <li><a href="#">Liberec</a></li>
+  <li><a href="#">České Budějovice</a></li>
+  <li><a href="#">Ústí nad Labem</a></li>
+  <li><a href="#">Hradec Králové</a></li>
+  <li><a href="#">Zlín</a></li>
+  <li><a href="#">Most</a></li>
+  <li><a href="#">Opava</a></li>
+  <li><a href="#">Frýdek-Místek</a></li>
+  <li><a href="#">Havířov</a></li>
+  <li><a href="#">Teplice</a></li>
+  
+
+</ul>
+
+<script>
+function myFunction() {
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
+</script>
+
+
+</body>
+</html>
