@@ -1,13 +1,13 @@
-# Redhatapp
-Parking.cz Project
+# RedHatApp
+## Parking.cz Project
 
-We want to solve long seeking for parking spots problem by
-connecting all parking systems in the Czech Republic to one
-and make it faster to find a spot to park.
+Parking.cz is a project focused on reducing the time drivers spend searching for parking spots.  
+The goal is to create a unified system by connecting parking infrastructures across the Czech Republic into a single platform, making parking faster and more convenient.
 
-Project goals : 
- to connect all parking systems to one;
- to make parking faster and easier;to develope easy to understand user interface;
- collaborating with bigger cities to build our system’s
-  infrastructure;
- accessible for everyone.
+## Project Goals
+
+- Connect all parking systems in the Czech Republic into one centralized platform  
+- Speed up and simplify the process of finding a parking spot  
+- Develop an intuitive and easy-to-understand user interface  
+- Collaborate with major cities to build and expand the system infrastructure  
+- Ensure accessibility and usability for everyone  
